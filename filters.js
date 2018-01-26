@@ -94,7 +94,29 @@ var filters = {
     })
   },
   'upcase': str => stringify(str).toUpperCase(),
-  'url_encode': encodeURIComponent
+  'url_encode': encodeURIComponent,
+  'img_url': (object, attr_class,alt) => {
+	  if(typeof object == "object")
+	  {
+		  var image = object.image;
+	  }
+	  else
+	  {
+		  var image = object;
+	  }
+ 
+		let str = '<img src="' + image + '"';
+		if(class_attr)
+			str += 'class="'+class_attr+'" ';
+		  
+		if(alt)
+		str += ' alt="'+ alt + '"';
+
+		str +='/>';
+		return str;
+	 
+	  
+  }
 }
 
 function escape (str) {

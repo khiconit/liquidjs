@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/harttle/liquidjs.git"
+    "url": "git+https://github.com/khiconit/liquidjs"
   },
   "engines": {
     "node": ">=4.8.7"
@@ -27,12 +27,12 @@
     "jinja",
     "shopify"
   ],
-  "author": "Harttle",
+  "author": "Daniel Truong",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/harttle/liquidjs/issues"
+    "url": "https://github.com/khiconit/liquidjs/issues"
   },
-  "homepage": "https://github.com/harttle/liquidjs#readme",
+  "homepage": "https://github.com/khiconit/liquidjs#readme",
   "dependencies": {
     "any-promise": "^1.3.0",
     "resolve-url": "^0.2.1"
