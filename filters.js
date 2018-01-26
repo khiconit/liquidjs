@@ -106,8 +106,8 @@ var filters = {
 	  }
  
 		let str = '<img src="' + image + '"';
-		if(class_attr)
-			str += 'class="'+class_attr+'" ';
+		if(attr_class)
+			str += 'class="'+attr_class+'" ';
 		  
 		if(alt)
 		str += ' alt="'+ alt + '"';
