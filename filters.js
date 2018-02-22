@@ -95,32 +95,49 @@ var filters = {
   },
   'upcase': str => stringify(str).toUpperCase(),
   'url_encode': encodeURIComponent,
-  'img_tag': (object, attr_class,alt) => {
-	  if(typeof object == "object")
-	  {
-		  var image = object.image;
-		  if(typeof image == "object")
-		  {
-			  image = image.src
-			  
-		  }
-	  }
-	  else
-	  {
-		  var image = object;
-	  }
- 
-		let str = '<img src="' + image + '" ';
-		if(attr_class)
-			str += 'class="'+attr_class+'" ';
-		  
-		if(alt)
-		str += ' alt="'+ alt + '"';
+  'img_url': (object) => {
+     if(typeof object == "object")
+    {
+      var image = object.image;
+      if(typeof image == "object")
+      {
+        image = image.src
+        
+      }
+    }
+    else
+    {
+      var image = object;
+    }
+    return image;
 
-		str +='/>';
-		return str;
-	 
-	  
+  },
+  'img_tag': (object, attr_class,alt) => {
+    if(typeof object == "object")
+    {
+      var image = object.image;
+      if(typeof image == "object")
+      {
+        image = image.src
+        
+      }
+    }
+    else
+    {
+      var image = object;
+    }
+ 
+    let str = '<img src="' + image + '" ';
+    if(attr_class)
+      str += 'class="'+attr_class+'" ';
+      
+    if(alt)
+    str += ' alt="'+ alt + '"';
+
+    str +='/>';
+    return str;
+   
+    
   }
 }
 
@@ -162,3 +179,4 @@ function isValidDate (date) {
 
 registerAll.filters = filters
 module.exports = registerAll
+ 
