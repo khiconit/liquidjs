@@ -94,20 +94,16 @@ var filters = {
     })
   },
   'upcase': str => stringify(str).toUpperCase(),
+  'json' : v=> JSON.stringify(v),
   'url_encode': encodeURIComponent,
-  'img_url': (object) => {
-     if(typeof object == "object")
+  'img_url': initial => {
+     if(typeof initial == "object")
     {
-      var image = object.image;
-      if(typeof image == "object")
-      {
-        image = image.src
-        
-      }
+      var image = (typeof initial.image != "undefined") ? initial.image.src : initial.src;
     }
     else
     {
-      var image = object;
+      var image = initial;
     }
     return image;
 
@@ -115,12 +111,7 @@ var filters = {
   'img_tag': (object, attr_class,alt) => {
     if(typeof object == "object")
     {
-      var image = object.image;
-      if(typeof image == "object")
-      {
-        image = image.src
-        
-      }
+      var image = (typeof object.image != "undefined") ? object.image.src : object.src;
     }
     else
     {
